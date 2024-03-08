@@ -67,6 +67,7 @@ function doesFilterMatch(filter: FilterClauseType, questions: Questions[]) {
 }
 
 app.get("/:formId/filteredResponses", async (req: Request, res: Response) => {
+  console.log(`/formId/filteredResponses`);
   const formResponses: FormResponse[] = await fetchData(req.params.formId);
   const filters: ResponseFilterType = JSON.parse(req.query.filters as string);
   let filterIndex = 0;
